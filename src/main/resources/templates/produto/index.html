@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Produto</title>
+</head>
+<body>
+	<nav><div class="collapse navbar-collapse" id="mynavbar">
+				<ul style="display:flex; list-style-type: none; background-color:#000000; padding:5px">
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/fornecedores">Fornecedor</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/clientes">Cliente</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/categorias">Categoria</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/produto">Produto</a></li>
+				</ul>
+				</nav>
+	
+	<h2>Produtos criados</h2>
+	<table>
+		
+		<tbody>
+			<tr th:each="produto : ${produto}">
+			<td >PRODUTO: </td>
+					<td th:text="${produto.getNome()}"></td>
+					<td>
+					<ul style="display:flex; list-style-type: none;">
+					<li >VALOR: </li>
+					<li th:text="${produto.getValor()}"></li>
+					</ul>
+					</td>
+					<td><ul style="display:flex; list-style-type: none;" th:each="fornecedor : ${fornecedores}">
+					<li >FORNECEDOR: </li>
+					<li th:text="${fornecedor.nome}">  </li></ul></td>
+				
+					<td> <ul style="display:flex; list-style-type: none;" th:each="categoria : ${categorias}">
+					<li >CATEGORIAS: </li>
+					<li th:text="${categoria.descricao}">  </li></ul></td>
+						
+			
+			</tr>
+			    
+			
+	
+			
+			
+		</tbody>
+	</table>
+	<br>
+		 
+	
+	<a href="/produto/create">Cadastrar</a>
+
+
+</body>
+</html>

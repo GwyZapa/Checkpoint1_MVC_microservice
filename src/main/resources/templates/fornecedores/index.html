@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exibir FORNECEDOR</title>
+</head>
+<body>
+	<nav><div class="collapse navbar-collapse" id="mynavbar">
+				<ul style="display:flex; list-style-type: none; background-color:#000000; padding:5px" class="navbar-nav me-auto">
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/fornecedores">Fornecedor</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/clientes">Cliente</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/categorias">Categoria</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/produto">Produto</a></li>
+				</ul>
+				</nav>
+	<h2>Fornecedores criados</h2>
+	<table>
+		<thead>
+			<th>Nome</th>
+			<th>Endereço</th>
+			<th>Telefone</th>
+		</thead>
+		<tbody>
+			<tr th:each="fornecedores : ${fornecedores}">
+				<td th:text="${fornecedores.getNome()}"></td>
+				<td th:text="${fornecedores.getEndereco()}"></td>
+				<td th:text="${fornecedores.getTelefone()}"></td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<a href="/fornecedores/create">Cadastrar</a>
+
+</body>
+</html>

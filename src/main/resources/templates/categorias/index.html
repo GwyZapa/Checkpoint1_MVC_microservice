@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Exibir categorias</title>
+</head>
+<body>
+	<nav><div class="collapse navbar-collapse" id="mynavbar">
+				<ul style="display:flex; list-style-type: none; background-color:#000000; padding:5px" class="navbar-nav me-auto">
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/fornecedores">Fornecedor</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/clientes">Cliente</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/categorias">Categoria</a></li>
+					<li style="margin-left:5px"><a style="text-decoration:none; color:#0000ff;" href="/produto">Produto</a></li>
+				</ul>
+				</nav>
+	<h2>Exibir categorias</h2>
+	<table>
+		<thead>
+			<th>ID</th>
+			<th>Descricao</th>
+		
+		</thead>
+		<tbody>
+			<tr th:each="categorias : ${categorias}">
+				<td th:text="${categorias.getId()}"></td>
+				<td th:text="${categorias.getDescricao()}"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<a href="/categorias/create">Cadastrar</a>
+	
+
+</body>
+</html>
